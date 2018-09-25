@@ -42,7 +42,7 @@ public class Range {
 				if (i != args.length - 1) {
 					System.out.print(", ");
 				}
-			} else if (current == next - 1) {// n is 1 less than the one after first
+			} else if (current == next - 1 && i != 0) {// n is 1 less than the one after first
 				System.out.print(current);
 			} else {
 				System.out.print(current);
