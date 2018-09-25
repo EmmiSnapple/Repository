@@ -1,3 +1,4 @@
+
 public class Range {
 
 	public static void main(String[] args) {
@@ -18,15 +19,14 @@ public class Range {
 		for (int i = 0; i < args.length - 1; i++) {
 			if (Integer.parseInt(args[i]) > Integer.parseInt(args[i + 1])) {
 				System.out.print("error: out of order");
-				System.exit(1);;
+				System.exit(1);
+				;
 			}
 		}
 
 		for (int i = 0; i < args.length; i++) {
 			if (i != 0) {
 				previous = Integer.parseInt(args[i - 1]);
-			} else {
-				System.out.print(args[0]);
 			}
 
 			current = Integer.parseInt(args[i]);
@@ -35,16 +35,17 @@ public class Range {
 				next = Integer.parseInt(args[i + 1]);
 			}
 
-			if (current == previous + 1 && current == next - 1) {
-				// nothing
-			} else if (current == previous + 1) {// n is 1 greater than the one before last
+			if (current == previous + 1 && current == next - 1 && i != 0) {
+				// System.out.println("fff");
+			} else if (current == previous + 1 && i != 0) {// n is 1 greater than the one before last
 				System.out.print("-" + current);
 				if (i != args.length - 1) {
 					System.out.print(", ");
 				}
 			} else if (current == next - 1) {// n is 1 less than the one after first
 				System.out.print(current);
-			} else if (i != 0 ) {
+
+			} else {
 				System.out.print(current);
 				if (i != args.length - 1) {
 					System.out.print(", ");
